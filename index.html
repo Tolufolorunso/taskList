@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/beautify.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo-box">
+                    <a href="#" class="logo">myTaskList</a>
+                </div>
+                <ul class="nav-link">
+                    <li><a href="#">UnCategories</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Family affair</a></li>
+                    <li><a href="#">Study</a></li>
+                    <li><a href="#">Personal</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal">
+        <div class="container">
+            <div class="modal-content">
+                <form action="" class="form-tag" id="form">
+                    <div class="form-group">
+                        <textarea name="content" cols="70" rows="7" id="content"></textarea>
+                    </div>
+                    <div class="select-btn">
+                        <div class="form-group select-option">
+                            <select name="category" id="category"> 
+                          <option value="UnCategories" disabled selected>Select category</option>
+                          <option value="work">Work</option>
+                          <option value="family affair">Family Affair</option>
+                          <option value="study">Study</option>
+                          <option value="personal">Personal</option>
+                        </select>
+                        </div>
+                        <button type="submit" class="btn add-btn">Add</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="output" id="output">
+
+    </div>
+    <div class="add">
+        <span>+</span>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright <span id="get-year">2020</span> | All Rights Reserved. Coded by <a class="coded-by" href="http://www.twitter.com/developer_tolu" target="_blank">@developer_tolu</a>
+            </p>
+        </div>
+    </footer>
+    <script src="/scripts/life.js" async defer></script>
+</body>
+
+</html>

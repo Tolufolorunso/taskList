@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.nav {
+    background: #111;
+    width: 100%;
+    max-height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.logo {
+    text-decoration: none;
+    color: #0eadf4;
+    display: block;
+    padding: 10px;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-link a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #0eadf4;
+}
+
+
+/* Form */
+
+.form-tag {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d6d9dc;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group textarea {
+    background: #fff;
+    border: 1px solid #d6d9dc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 7px;
+    transition: all 0.2s ease-in-out;
+    resize: none;
+}
+
+.form-group select {
+    background: #fff;
+    border: none;
+    border-bottom-left-radius: 3px;
+    box-shadow: none;
+    width: 100%;
+    font-size: 1.4rem;
+    -webkit-appearance: none;
+    padding: 7px;
+    transition: all 0.2s ease-in-out;
+    background: #d6d9dc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #0eadf4;
+}
+
+.btn {
+    text-align: right;
+    display: flex;
+    justify-content: left;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #0eadf4;
+    border: none;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.select-btn {
+    display: flex;
+    width: 100%;
+    border-bottom-right-radius: 3px;
+    margin-top: -4px;
+}
+
+.select-option {
+    width: 80%;
+}
+
+.add-btn {
+    width: 20%;
+    background: #0eadf4;
+    border-bottom-right-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(206, 206, 206);
+}
+
+.modal-content {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: white;
+    padding: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.add {
+    color: #fff;
+    font-size: 3rem;
+    display: grid;
+    place-items: center;
+}
+
+.add span {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #072c3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+}
+
+.footer {
+    background: #072c3d;
+    color: #fff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    /* margin-top: 60px; */
+    /* position: fixed;
+    bottom: 0; */
+}
+
+.footer p {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.footer .coded-by {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #0eadf4;
+    padding-left: 5px;
+    transition: all 0.5s ease;
+}
+
+.footer .coded-by:hover {
+    text-decoration: underline;
+    display: inline-block;
+    color: #0eadf4;
+    transform: rotate(2deg) scale(1.1);
+}
