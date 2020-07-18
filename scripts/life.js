@@ -2,6 +2,11 @@ const todo = (function () {
   var clearStorageBtn = document.getElementById("clear-storage");
   var output = document.getElementById("output");
   var cancelBtn = document.querySelector(".cancel");
+  var workUI = document.getElementById("work");
+  var studyUI = document.getElementById("study");
+  var personalUI = document.getElementById("personal");
+  var familyUI = document.getElementById("family");
+  var homeUI = document.getElementById("home");
   // var todoState = "add";
 
   var category = document.getElementById("category");
@@ -16,6 +21,11 @@ const todo = (function () {
     output.addEventListener("click", editTodo);
     cancelBtn.addEventListener("click", cancelUpdate);
     clearStorageBtn.addEventListener("click", clearStorage);
+    workUI.addEventListener("click", displayWorkList);
+    studyUI.addEventListener("click", displayStudyList);
+    personalUI.addEventListener("click", displayPersonalList);
+    familyUI.addEventListener("click", displayFamilyList);
+    homeUI.addEventListener("click", displayAllList);
   }
 
   function addMessage(e) {
@@ -80,8 +90,8 @@ const todo = (function () {
     return todos;
   }
 
-  function addTodoToUI() {
-    const todoFromStorage = getTodoFromStorage();
+  function addTodoToUI(UIData) {
+    const todoFromStorage = UIData || getTodoFromStorage();
     todoFromStorage.reverse();
     let htmlTemplate = "";
 
@@ -95,8 +105,9 @@ const todo = (function () {
          <div class="card-footer">
           <input type="hidden" value="${todo.category}" class="" id="category"> 
 
-          <a href="#" class="remove" data-id="${todo._id}" id="remove">Remove</a>
-          <a href="#add" id="edit" class="edit" data-id="${todo._id}">Edit</a>
+          <a href="#remove" class="remove" data-id="${todo._id}" id="remove">Remove</a>
+          <a href="#edit" id="edit" class="edit" data-id="${todo._id}">Edit</a>
+          <span href="#edit" id="edit" class="category">Tag: ${todo.category}</span>
          </div>
        </div>
       `;
@@ -217,6 +228,40 @@ const todo = (function () {
     document.getElementById("id").value = "";
   }
 
+  function displayWorkList() {
+    const todoFromStorage = getTodoFromStorage();
+    var filterWork = todoFromStorage.filter(function (item) {
+      return item.category === "work";
+    });
+    addTodoToUI(filterWork);
+  }
+  function displayStudyList() {
+    const todoFromStorage = getTodoFromStorage();
+    var filterStudy = todoFromStorage.filter(function (item) {
+      return item.category === "study";
+    });
+    addTodoToUI(filterStudy);
+  }
+  function displayFamilyList() {
+    const todoFromStorage = getTodoFromStorage();
+    var filterFamilyAffair = todoFromStorage.filter(function (item) {
+      return item.category === "family-affair";
+    });
+    addTodoToUI(filterFamilyAffair);
+  }
+
+  function displayPersonalList() {
+    const todoFromStorage = getTodoFromStorage();
+    var filterPersonalAffair = todoFromStorage.filter(function (item) {
+      return item.category === "personal";
+    });
+    addTodoToUI(filterPersonalAffair);
+  }
+
+  function displayAllList() {
+    addTodoToUI();
+  }
+
   return {
     init: function event() {
       eventListener();
@@ -229,3 +274,14 @@ todo.init();
 // if (1) {
 //   output.innerHTML = "<p>Write what hjhghj you have in mind</p>";
 // }
+
+// site navigation
+const body = document.querySelector("body");
+const menu = document.querySelector("#menu");
+const nav = document.querySelector("#nav");
+const i = document.querySelector("#menu i");
+
+menu.addEventListener("click", function (e) {
+  nav.classList.toggle("open");
+  menu.classList.toggle("close");
+});

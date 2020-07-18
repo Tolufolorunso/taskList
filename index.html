@@ -23,25 +23,43 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="nav">
+    <!-- <div class="menu" id="menu">
+        <i class="fa fa-bars"></i>
+    </div> -->
+    <nav class="nav" id="main">
         <div class="container">
             <div class="nav-content">
                 <div class="logo-box">
-                    <a href="#" class="logo">myTaskList</a>
+                    <a href="#" class="logo" id="home">myTaskList</a>
                 </div>
                 <ul class="nav-link">
-                    <a href="#" class="tooltipped" id="clear-storage">
+                    <li>
+                        <a href="#" class="clear" id="clear-storage" style="color:#fff">
                             Clear
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="tooltipped" data-tooltip="Work" target="_blank">
-                            <i class="fa fa-user"></i>
+                        <a href="#work" class="tooltipped" data-tooltip="Work" id="work">
+                            <!-- <i class="fa fa-user"></i> -->
+                            Work
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="tooltipped" data-tooltip="Family affair" target="_blank">
-                            <i class="fa fa-user-friends"></i>
+                        <a href="#study" class="tooltipped" data-tooltip="study" id="study">
+                            <!-- <i class="fa fa-user-friends"></i> -->
+                            Study
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#study" class="tooltipped" data-tooltip="study" id="family">
+                            <!-- <i class="fa fa-user-friends"></i> -->
+                            Family
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#study" class="tooltipped" data-tooltip="study" id="personal">
+                            <!-- <i class="fa fa-user-friends"></i> -->
+                            Personal
                         </a>
                     </li>
                 </ul>
@@ -63,7 +81,7 @@
                         <select name="category" id="category"> 
                           <option value="UnCategories" disabled selected>Select category</option>
                           <option value="work">Work</option>
-                          <option value="family affair">Family Affair</option>
+                          <option value="family-affair">Family Affair</option>
                           <option value="study">Study</option>
                           <option value="personal">Personal</option>
                         </select>
@@ -102,6 +120,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     </script>
     <script src="/scripts/life.js" async defer></script>
+    <!-- <script>
+        window.addEventListener("scroll", function(e) {
+            if (window.pageYOffset > 600) {
+                goUp.style.opacity = "1";
+            }
+            if (window.pageYOffset < 600) {
+                goUp.style.opacity = "0";
+            }
+        });
+    </script> -->
 </body>
 
 </html>
