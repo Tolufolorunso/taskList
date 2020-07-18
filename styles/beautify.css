@@ -247,6 +247,7 @@ body {
     margin-top: 40px;
     position: fixed;
     bottom: 0;
+    z-index: 1000000;
 }
 
 .footer p {
