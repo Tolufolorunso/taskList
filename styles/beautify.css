@@ -84,9 +84,10 @@ body {
     text-decoration: none;
 }
 
-.output p {
+
+/* .output p {
     text-decoration: none;
-}
+} */
 
 .remove {
     margin-left: auto;
@@ -95,8 +96,9 @@ body {
 }
 
 .output-flex {
-    width: 400px;
-    min-height: 400px;
+    width: 100%;
+    max-width: 400px;
+    /* min-height: 400px; */
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -236,15 +238,15 @@ body {
 .footer {
     background: #072c3d;
     color: #fff;
-    height: 80px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;
-    margin-top: 60px;
-    /* position: fixed;
-    bottom: 0; */
+    margin-top: 40px;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer p {
@@ -274,7 +276,8 @@ body {
 .alert {
     position: absolute;
     top: 45px;
-    right: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 300px;
     color: #fff;
     z-index: 50000;

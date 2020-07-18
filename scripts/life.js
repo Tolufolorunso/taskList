@@ -94,9 +94,12 @@ const todo = (function () {
          </div>
          <div class="card-footer">
           <input type="hidden" value="${todo.category}" class="" id="category"> 
-
-          <a href="#" class="remove" data-id="${todo._id}" id="remove">X</a>
-          <a href="#add" id="edit" class="edit" data-id="${todo._id}"><i class="fab fa-pencil"></i>L</a>
+          <a href="#" class="remove" data-id="${todo._id}" id="remove">
+           <i class="fa fa-trash-alt"></i>
+          </a>
+          <a href="#add" id="edit" class="edit" data-id="${todo._id}">
+           <i class="fa fa-edit"></i>
+          </a>
          </div>
        </div>
       `;
