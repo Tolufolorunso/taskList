@@ -84,7 +84,6 @@ body {
 .output-container {
     margin-top: 40px;
     position: relative;
-    z-index: -6000000;
 }
 
 .output li a {
@@ -254,11 +253,10 @@ body {
     margin-top: 60px;
     position: fixed;
     bottom: 0;
-    z-index: 1000000;
 }
 
 .footer p {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 

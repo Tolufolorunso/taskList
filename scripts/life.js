@@ -94,12 +94,9 @@ const todo = (function () {
          </div>
          <div class="card-footer">
           <input type="hidden" value="${todo.category}" class="" id="category"> 
-          <a href="#" class="remove" data-id="${todo._id}" id="remove">
-           <i class="fa fa-trash-alt"></i>
-          </a>
-          <a href="#add" id="edit" class="edit" data-id="${todo._id}">
-           <i class="fa fa-edit"></i>
-          </a>
+
+          <a href="#" class="remove" data-id="${todo._id}" id="remove">Remove</a>
+          <a href="#add" id="edit" class="edit" data-id="${todo._id}">Edit</a>
          </div>
        </div>
       `;
@@ -216,7 +213,7 @@ const todo = (function () {
   function clearFields() {
     document.getElementById("title").value = "";
     document.getElementById("content").value = "";
-    document.getElementById("category").value = "Select category";
+    // document.getElementById("category").value = "Select category";
     document.getElementById("id").value = "";
   }
 

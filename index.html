@@ -13,8 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/beautify.css">
@@ -31,19 +30,18 @@
                     <a href="#" class="logo">myTaskList</a>
                 </div>
                 <ul class="nav-link">
-                    <li>
-                        <a href="#" class="tooltipped" id="clear-storage">
+                    <a href="#" class="tooltipped" id="clear-storage">
                             Clear
                         </a>
                     </li>
                     <li>
                         <a href="#" class="tooltipped" data-tooltip="Work" target="_blank">
-                            <i class="far fa-user"></i>
+                            <i class="fa fa-user"></i>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="tooltipped" data-tooltip="Family affair" target="_blank">
-                            <i class="fab fa-user-friends"></i>
+                            <i class="fa fa-user-friends"></i>
                         </a>
                     </li>
                 </ul>
@@ -83,9 +81,8 @@
         <div class="container">
             <div class="output-flex">
                 <p>Write what you have in mind</p>
-
-                <div id="output" class="output">
-                    <p>Write what you have in mind</p>
+                <div id="output">
+                    <!-- <p>Write what you have in mind</p> -->
                 </div>
             </div>
         </div>
@@ -98,7 +95,7 @@
         </div>
     </footer>
     <div class="alert" id="alert">
-        <p id="alert-p"></p>
+        <p id="alert-p">successfully added</p>
     </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
