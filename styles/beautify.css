@@ -280,16 +280,13 @@ body {
 /* alert */
 
 .alert {
-    position: absolute;
+    position: fixed;
     top: 45px;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 300px;
     color: #fff;
-    z-index: 50000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 5;
     padding: 10px 20px;
     font-size: 2rem;
     transition: all .2s ease;
