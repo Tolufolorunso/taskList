@@ -81,8 +81,6 @@ body {
     margin-left: 1px;
 }
 
-{}
-
 .form-container {
     margin-top: 60px;
 }
@@ -349,8 +347,11 @@ padding: 10px 40px; */
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
-*[data-tooltip]::after {
-    /* width: 0;
+
+/* *[data-tooltip]::after { */
+
+
+/* width: 0;
 height: 0;
 left: 1em;
 bottom: 0em;
@@ -358,7 +359,9 @@ border: 0.6em solid transparent;
 border-bottom-color: #0eadf4;
 -webkit-transform-origin: left bottom;
 transform-origin: left bottom; */
-}
+
+
+/* } */
 
 *[data-tooltip]:hover::before,
 *[data-tooltip]:hover::after {
