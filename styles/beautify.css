@@ -77,6 +77,12 @@ body {
     color: #0eadf4;
 }
 
+.nav-link li a {
+    margin-left: 1px;
+}
+
+{}
+
 .form-container {
     margin-top: 60px;
 }
@@ -305,6 +311,65 @@ padding: 10px 40px; */
     opacity: 0;
     border-radius: 3px;
     pointer-events: none;
+}
+
+
+/* Navigations Tooltips*/
+
+*[data-tooltip] {
+    display: inline;
+    position: relative;
+}
+
+*[data-tooltip]::before,
+*[data-tooltip]::after {
+    content: "";
+    position: absolute;
+    font-size: 0.8em;
+    opacity: 0;
+    z-index: 99999;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    transition: all 300ms ease 200ms;
+}
+
+*[data-tooltip]::before {
+    content: attr(data-tooltip);
+    width: 5em;
+    right: -2em;
+    bottom: 1em;
+    text-align: center;
+    line-height: 1.1em;
+    padding: 0.2em 0.5em;
+    color: #fff;
+    background-color: #0eadf4;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+*[data-tooltip]::after {
+    /* width: 0;
+height: 0;
+left: 1em;
+bottom: 0em;
+border: 0.6em solid transparent;
+border-bottom-color: #0eadf4;
+-webkit-transform-origin: left bottom;
+transform-origin: left bottom; */
+}
+
+*[data-tooltip]:hover::before,
+*[data-tooltip]:hover::after {
+    bottom: 2em;
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+*[data-tooltip]:hover::after {
+    bottom: 0.5em;
 }
 
 
