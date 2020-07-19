@@ -276,12 +276,12 @@ todo.init();
 // }
 
 // site navigation
-const body = document.querySelector("body");
-const menu = document.querySelector("#menu");
-const nav = document.querySelector("#nav");
-const i = document.querySelector("#menu i");
+// const body = document.querySelector("body");
+// const menu = document.querySelector("#menu");
+// const nav = document.querySelector("#nav");
+// const i = document.querySelector("#menu i");
 
-menu.addEventListener("click", function (e) {
-  nav.classList.toggle("open");
-  menu.classList.toggle("close");
-});
+// menu.addEventListener("click", function (e) {
+//   nav.classList.toggle("open");
+//   menu.classList.toggle("close");
+// });
