@@ -1,4 +1,4 @@
-const todo = (function () {
+var todo = (function () {
   var clearStorageBtn = document.getElementById("clear-storage");
   var output = document.getElementById("output");
   var cancelBtn = document.querySelector(".cancel");
@@ -40,7 +40,7 @@ const todo = (function () {
       return;
     }
 
-    const todoObj = {
+    var todoObj = {
       category: category.value,
       message: message.value,
       title: title.value,
@@ -51,8 +51,15 @@ const todo = (function () {
         "todo-" +
         Math.floor(Math.random() * 500000) +
         title.value.substring(0, 3);
-      addToLocalStorage(todoObj, "add");
-      showAlert("success", "Task added successfully");
+      document.querySelector(".spinner").style.display = "block";
+      document.querySelector(".fa-plus").style.display = "none";
+
+      setTimeout(function () {
+        document.querySelector(".spinner").style.display = "none";
+        document.querySelector(".fa-plus").style.display = "block";
+        addToLocalStorage(todoObj, "add");
+        showAlert("success", "Task added successfully");
+      }, 1000);
     } else {
       todoObj._id = id.value;
       addToLocalStorage(todoObj, "edit");
@@ -62,7 +69,7 @@ const todo = (function () {
   }
 
   function addToLocalStorage(todoObj, todoState) {
-    const todoFromStorage = getTodoFromStorage();
+    var todoFromStorage = getTodoFromStorage();
     if (todoState === "add") {
       todoFromStorage.push(todoObj);
       localStorage.setItem("todos", JSON.stringify(todoFromStorage));
@@ -81,7 +88,7 @@ const todo = (function () {
 
   function getTodoFromStorage() {
     var todos;
-    const todoFromStorage = localStorage.getItem("todos");
+    var todoFromStorage = localStorage.getItem("todos");
     if (todoFromStorage === null) {
       todos = [];
     } else {
@@ -91,23 +98,25 @@ const todo = (function () {
   }
 
   function addTodoToUI(UIData) {
-    const todoFromStorage = UIData || getTodoFromStorage();
+    var todoFromStorage = UIData || getTodoFromStorage();
     todoFromStorage.reverse();
     let htmlTemplate = "";
 
     todoFromStorage.forEach(function (todo) {
       htmlTemplate += `
-       <div class="card" >
+       <div class="card" id="drag1">
          <div class="card-body">
           <h4>${todo.title}</h4>
           <p class="card-text">${todo.message}</p>
          </div>
          <div class="card-footer">
+          <input type="hidden" value="${todo._id}" class="" id="dragAndDrop"> 
+
           <input type="hidden" value="${todo.category}" class="" id="category"> 
 
-          <a href="#remove" class="remove" data-id="${todo._id}" id="remove">Remove</a>
-          <a href="#edit" id="edit" class="edit" data-id="${todo._id}">Edit</a>
-          <span href="#edit" id="edit" class="category">Tag: ${todo.category}</span>
+          <a href="#" class="remove" data-id="${todo._id}" id="remove">Remove</a>
+          <a href="#editTodo" id="edit" class="edit" data-id="${todo._id}">Edit</a>
+          <span class="category">Tag: ${todo.category}</span>
          </div>
        </div>
       `;
@@ -126,16 +135,16 @@ const todo = (function () {
   }
 
   function deleteFromStorage(id) {
-    const todoFromStorage = getTodoFromStorage();
+    var todoFromStorage = getTodoFromStorage();
 
-    const newTodos = todoFromStorage.filter(function (item) {
+    var newTodos = todoFromStorage.filter(function (item) {
       return id !== item._id;
     });
     localStorage.setItem("todos", JSON.stringify(newTodos));
   }
 
   function clearStorage(todo) {
-    const clear = confirm("Are you sure you want to clear LocalStorage");
+    var clear = confirm("Are you sure you want to clear LocalStorage");
     if (clear == true) {
       localStorage.clear("todos");
       showAlert("success", "You cleared DB successfully");
@@ -158,7 +167,7 @@ const todo = (function () {
           .textContent;
       var category =
         evt.target.previousElementSibling.previousElementSibling.value;
-      const todoEditObj = {
+      var todoEditObj = {
         id,
         title,
         category,
@@ -198,7 +207,6 @@ const todo = (function () {
       clearFields();
     }
   }
-  // showAlert("success", "Task added successfully");
 
   function showAlert(alertType, alertMessage) {
     var alertDiv = document.getElementById("alert");
@@ -229,37 +237,42 @@ const todo = (function () {
   }
 
   function displayWorkList() {
-    const todoFromStorage = getTodoFromStorage();
+    var todoFromStorage = getTodoFromStorage();
     var filterWork = todoFromStorage.filter(function (item) {
       return item.category === "work";
     });
     addTodoToUI(filterWork);
+    document.getElementById("category").value = "work";
   }
   function displayStudyList() {
-    const todoFromStorage = getTodoFromStorage();
+    var todoFromStorage = getTodoFromStorage();
     var filterStudy = todoFromStorage.filter(function (item) {
       return item.category === "study";
     });
     addTodoToUI(filterStudy);
+    document.getElementById("category").value = "study";
   }
   function displayFamilyList() {
-    const todoFromStorage = getTodoFromStorage();
+    var todoFromStorage = getTodoFromStorage();
     var filterFamilyAffair = todoFromStorage.filter(function (item) {
       return item.category === "family-affair";
     });
     addTodoToUI(filterFamilyAffair);
+    document.getElementById("category").value = "family-affair";
   }
 
   function displayPersonalList() {
-    const todoFromStorage = getTodoFromStorage();
+    var todoFromStorage = getTodoFromStorage();
     var filterPersonalAffair = todoFromStorage.filter(function (item) {
       return item.category === "personal";
     });
     addTodoToUI(filterPersonalAffair);
+    document.getElementById("category").value = "personal";
   }
 
   function displayAllList() {
     addTodoToUI();
+    document.getElementById("category").value = "Uncategories";
   }
 
   return {
@@ -267,21 +280,10 @@ const todo = (function () {
       eventListener();
       addTodoToUI();
     },
+    del: function (id) {
+      deleteFromStorage(id);
+    },
   };
 })();
 
 todo.init();
-// if (1) {
-//   output.innerHTML = "<p>Write what hjhghj you have in mind</p>";
-// }
-
-// site navigation
-// const body = document.querySelector("body");
-// const menu = document.querySelector("#menu");
-// const nav = document.querySelector("#nav");
-// const i = document.querySelector("#menu i");
-
-// menu.addEventListener("click", function (e) {
-//   nav.classList.toggle("open");
-//   menu.classList.toggle("close");
-// });

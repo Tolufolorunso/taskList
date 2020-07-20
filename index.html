@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="styles/beautify.css">
 </head>
 
-<body>
+
+<body id="editTodo">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -75,7 +76,7 @@
                 <div class="select-btn">
                     <div class="form-group select-option">
                         <select name="category" id="category"> 
-                          <option value="UnCategories" disabled selected>Select category</option>
+                          <option value="Uncategories" disabled selected>Select category</option>
                           <option value="work">Work</option>
                           <option value="family-affair">Family Affair</option>
                           <option value="study">Study</option>
@@ -84,12 +85,16 @@
                     </div>
                     <input type="hidden" value="" class="" id="id">
                     <input type="hidden" value="Cancel" class="btn cancel" id="cancel">
-                    <button type="submit" class="btn add-btn" id="add-button"><i class="fa fa-plus"></i></button>
+                    <button type="submit" class="btn add-btn" id="add-button">
+                        <i class="fa fa-plus"></i>
+                        <img src="/images/spinner.gif" alt="" class="spinner">
+                    </button>
                 </div>
 
             </form>
         </div>
     </div>
+
 
     <div class="output-container">
         <div class="container">
@@ -126,6 +131,32 @@
             }
         });
     </script> -->
+    <script>
+        // console.log(todo)
+
+        // function onDragStart(event) {
+        //     // evt.dataTransfer.effctAllow = "move";
+        //     event.dataTransfer.setData("text/plain", event.target.id);
+        //     event.currentTarget.style.backgroundColor = 'yellow';
+        // }
+
+        // function onDragOver(event) {
+        //     event.preventDefault()
+        // }
+
+        // function onDrop(event) {
+        //     var id = event.dataTransfer.getData('text');
+
+        //     const draggableElement = document.getElementById(id)
+        //     const dropzone = event.target;
+        //     dropzone.appendChild(draggableElement);
+        //     event.dataTransfer.clearData()
+        //     console.log(event.target.firstElementChild.lastElementChild.firstElementChild.value)
+        // }
+        // function dragOver(evt) {
+        //     return false;
+        // }
+    </script>
 </body>
 
 </html>
